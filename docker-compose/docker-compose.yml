@@ -86,13 +86,14 @@ services:
       - "16101:16101"
 
   owfms:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owfms:${OWFMS_TAG}"
+    image: "closewrt/owfms:${OWSEC_TAG}"
     networks:
       openwifi:
         aliases:
           - ${INTERNAL_OWFMS_HOSTNAME}
     env_file:
       - owfms.env
+      - owfms.closewrt.env
     depends_on:
       - kafka
     restart: unless-stopped
