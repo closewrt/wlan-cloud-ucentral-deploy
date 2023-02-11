@@ -17,7 +17,7 @@ networks:
 
 services:
   owgw:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owgw:${OWGW_TAG}"
+    image: "${IMAGE_REPO}/owgw:${OWGW_TAG}"
     networks:
       openwifi:
         aliases:
@@ -46,7 +46,7 @@ services:
       - net.ipv4.tcp_keepalive_time=45
 
   owgw-ui:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owgw-ui:${OWGWUI_TAG}"
+    image: "${IMAGE_REPO}/owgw-ui:${OWGWUI_TAG}"
     networks:
       openwifi:
     env_file:
@@ -68,7 +68,7 @@ services:
       - "443:443"
 
   owsec:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owsec:${OWSEC_TAG}"
+    image: "${IMAGE_REPO}/owsec:${OWSEC_TAG}"
     networks:
       openwifi:
         aliases:
@@ -86,7 +86,7 @@ services:
       - "16101:16101"
 
   owfms:
-    image: "closewrt/owfms:${OWSEC_TAG}"
+    image: "${IMAGE_REPO}/owfms:${OWSEC_TAG}"
     networks:
       openwifi:
         aliases:
@@ -105,7 +105,7 @@ services:
       - "16104:16104"
 
   owprov:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owprov:${OWPROV_TAG}"
+    image: "${IMAGE_REPO}/owprov:${OWPROV_TAG}"
     networks:
       openwifi:
         aliases:
@@ -123,7 +123,7 @@ services:
       - "16105:16105"
 
   owprov-ui:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owprov-ui:${OWPROVUI_TAG}"
+    image: "${IMAGE_REPO}/owprov-ui:${OWPROVUI_TAG}"
     networks:
       openwifi:
     env_file:
@@ -145,7 +145,7 @@ services:
       - "8443:8443"
 
   owanalytics:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owanalytics:${OWANALYTICS_TAG}"
+    image: "${IMAGE_REPO}/owanalytics:${OWANALYTICS_TAG}"
     networks:
       openwifi:
         aliases:
@@ -163,7 +163,7 @@ services:
       - "16109:16109"
 
   owsub:
-    image: "tip-tip-wlan-cloud-ucentral.jfrog.io/owsub:${OWSUB_TAG}"
+    image: "${IMAGE_REPO}/owsub:${OWSUB_TAG}"
     networks:
       openwifi:
         aliases:
